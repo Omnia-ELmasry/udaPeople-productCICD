@@ -113,20 +113,20 @@ jobs:
             npm install
             npm audit --audit-level=critical
 
-  scan-frontend:
+  scan-backend:
     docker:
        - image: cimg/node:13.8.0
     steps:
       - checkout
       - restore_cache:
-          keys: [frontend-dep]
+          keys: [backend-dep]
       - run:
-          name: Front-end scan
+          name: Back-end scan
           command: |
-            cd frontend
+            cd  backend
             npm install
             npm audit --audit-level=critical
-            
+
 #   deploy-infrastructure:
 #     docker:
 #       # Docker image here that supports AWS CLI
