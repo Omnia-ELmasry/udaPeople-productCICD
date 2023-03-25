@@ -89,7 +89,7 @@ jobs:
           paths: [frontend/node_modules]
           key: frontend-dep
 
-  build-backend:
+ build-backend:
     docker:
       - image: cimg/node:13.8.0
     steps:
