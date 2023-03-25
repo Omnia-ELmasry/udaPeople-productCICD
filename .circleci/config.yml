@@ -207,9 +207,7 @@ jobs:
           paths:
             - project/.circleci/ansible/inventory.txt
       
-      - destroy-environment           
-
-#   configure-infrastructure:
+ #   configure-infrastructure:
 #     docker:
 #       # Docker image here that supports Ansible
 #     steps:
@@ -338,7 +336,9 @@ jobs:
 #             if [[ "${STACKS[@]}" =~ "${OldWorkflowID}" ]]
 #             then
 #               # your code here
-#             fi
+#             fi              
+
+
             
 workflows:
   default:
