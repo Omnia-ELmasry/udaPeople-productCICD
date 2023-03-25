@@ -107,7 +107,7 @@ jobs:
           paths: [backend/node_modules]
           key: backend-dep
 
-  test-frontend:
+ test-frontend:
     docker:
        - image: cimg/node:13.8.0
     steps:
@@ -121,7 +121,7 @@ jobs:
             npm install
             npm test
                 
-  test-backend:
+ test-backend:
     docker:
        - image: cimg/node:13.8.0
     steps:
@@ -136,7 +136,7 @@ jobs:
              npm test
  
             
-  scan-frontend:
+ scan-frontend:
     docker:
        - image: cimg/node:13.8.0
     steps:
@@ -152,7 +152,7 @@ jobs:
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
 
-  scan-backend:
+ scan-backend:
     docker:
        - image: cimg/node:13.8.0
     steps:
