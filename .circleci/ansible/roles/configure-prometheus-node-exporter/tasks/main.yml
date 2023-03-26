@@ -1,24 +1,13 @@
 
 ---
-# - name: "Add Node.js from Nodesource"
-- name: "Install Node.js 13"
-  become: true
-  shell: |
-    # curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-    # install latest version from nodejs
-    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-    sudo apt install -y nodejs
-    # use n version manager to use nodejs version 13.8.0
-    sudo npm install --global n
-    sudo n 13.8.0
-# - name: "Install Node.js 13"
-#   become: true
-#   apt:
-#     name: ["nodejs"]
-#     state: latest
-#     update_cache: yes
+- name: "Download node exproter"
+  become: True
+  shell:
+    cmd: "wget https://github.com/prometheus/node_exporter/releases/download/v0.17.0/node_exporter-0.17.0.linux-amd64.tar.gz; mv node_exporter-0.17.0.linux-amd64.tar.gz /tmp"
+    chdir: .
 
-- name: "Install PM2 Globally"
-  npm:
-    name: pm2
-    global: yes    
+
+- name: "move node exproter"
+  become: True
+  shell:
+    cmd: "ls"
