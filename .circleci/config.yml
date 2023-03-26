@@ -243,10 +243,12 @@ jobs:
          
       - run:
           name: Run migrations
-          command: |           
+          command: | 
             cd backend
             export NODE_ENV=production
-            npm install
+            npm run build  
+            npm install tsc 
+            npm install -g .     
             npm run migrations
             npm audit fix
             
