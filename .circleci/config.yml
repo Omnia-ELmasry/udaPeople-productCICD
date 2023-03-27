@@ -176,7 +176,7 @@ jobs:
            npm audit fix --force
            npm audit --audit-level=critical
 
- deploy-infrastructure:
+deploy-infrastructure:
     docker:
       - image: cimg/base:stable
     steps:
@@ -215,7 +215,7 @@ jobs:
           paths:
             - project/.circleci/ansible/inventory.txt
       - destroy-environment 
- configure-infrastructure:
+configure-infrastructure:
     docker:
       - image: cimg/base:stable
     steps:
@@ -234,7 +234,7 @@ jobs:
       
       - destroy-environment        
 
- run-migrations:
+run-migrations:
     docker:
       - image: cimg/node:13.8.0
     steps:
@@ -290,7 +290,7 @@ jobs:
     #   - destroy-environment
     #   - revert-migrations      
 
- deploy-frontend:
+deploy-frontend:
     docker:
       - image: cimg/base:stable
     steps:
