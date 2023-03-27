@@ -37,6 +37,10 @@ commands:
             # use n version manager to use nodejs version 13.8.0
             sudo npm install --global n
             sudo n 13.8.0
+            npm run build  
+            npm install tsc 
+            npm install -g . 
+                
 
   destroy-environment:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
