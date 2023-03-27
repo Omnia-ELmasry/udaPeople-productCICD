@@ -249,9 +249,7 @@ jobs:
             cd backend
             export NODE_ENV=production
             npm run build  
-            npm install tsc 
-            npm install -g . 
-            npm install    
+            npm install 
             npm run migrations
             npm audit fix
             
