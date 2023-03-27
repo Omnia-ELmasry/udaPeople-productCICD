@@ -1,6 +1,5 @@
 version: 2.1
 
-# version: 2.1
 
 commands:
   install_awscli:
@@ -216,7 +215,7 @@ jobs:
           root: ~/
           paths:
             - project/.circleci/ansible/inventory.txt
-      
+      - destroy-environment 
  configure-infrastructure:
     docker:
       - image: cimg/base:stable
@@ -248,8 +247,7 @@ jobs:
           command: | 
             cd backend
             export NODE_ENV=production
-            npm run build  
-            npm install 
+            npm install typescript -g
             npm run migrations
             npm audit fix
             
