@@ -249,6 +249,9 @@ jobs:
             cd backend
             export NODE_ENV=production
             sudo npm install
+            npm run build
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit fix --force
             npm run migrations > migrations_dump.txt 
