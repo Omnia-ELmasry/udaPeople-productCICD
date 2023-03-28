@@ -219,7 +219,7 @@ jobs:
       - checkout
       - install_ansible
       - add_ssh_keys:
-          fingerprints: ["40:a5:1e:e7:a2:88:3d:d0:f6:3e:35:d2:cd:bc:5b:2f"]
+          fingerprints: ["ce:76:5e:83:33:89:59:9e:cb:ad:60:00:ee:81:8e:40"]
       - attach_workspace:
           at: ~/
       - run:
@@ -250,7 +250,7 @@ jobs:
               curl https://kvdb.io/${KVDB_BUCKET}/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
             fi
       - destroy-environment
-      - revert-migrations  
+      - revert-migrations
 
 #  deploy-frontend:
 #     docker:
